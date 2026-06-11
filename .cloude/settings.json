@@ -1,0 +1,26 @@
+{
+    "hooks": {
+        "PreToolUse": [
+            {
+                "matcher": "Read",
+                "hooks": [
+                    {
+                        "type": "command",
+                        "command": "node /home/hooks/read_hook.js"
+                    }
+                ]
+            }
+        ],
+        "PostToolUse": [
+          {
+            "matcher": "Write|Edit",
+            "hooks": [
+              {
+                "type": "command", 
+                "command": "node /home/hooks/edit_hook.js"
+              }
+            ]
+          }
+        ]
+    }
+}
